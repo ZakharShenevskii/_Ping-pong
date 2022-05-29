@@ -4,9 +4,9 @@ class GameSprite(sprite.Sprite):
          super().__init__()
          self.image = transform.scale(image.load(player_image), (size_x, size_y))
          self.rect = self.image.get_rect()
-         self.speed = player_speed
-         self.rect.y = player_y
          self.rect.x = player_x
+         self.rect.y = player_y
+         self.speed = player_speed
      def reset(self):
          window.blit(self.image, (self.rect.x, self.rect.y))
 font.init()
@@ -14,7 +14,8 @@ font1 = font.SysFont('Arial', 80)
 lose1 = font1.render('player 1 lose!', True, (255, 255, 255))
 lose2 = font1.render('player 2 lose!', True, (180, 0, 0))
 font2 = font.SysFont('Arial', 36)
-
+win_width = 700
+win_height = 500
 score = 0
 window = display.set_mode((700, 500))
 background = (170, 255, 150)
